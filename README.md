@@ -1,4 +1,4 @@
-# SR_mfusion
+# SR_fusion
 
 ### 本项目收集SR（super resolution）研究领域中多个成熟的预训练模型，统一调用运行，方便评估对比(A combine operation for SR models)。
 
