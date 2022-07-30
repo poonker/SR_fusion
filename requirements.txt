@@ -1,0 +1,6 @@
+#srgan_tf requirements
+git+https://github.com/tensorlayer/tensorlayerx.git
+numpy>=1.16.1
+easydict==1.9
+opencv-python>=4.5.1.48
+
