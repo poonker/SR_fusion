@@ -17,9 +17,9 @@ if __name__ == '__main__':
     # argparse是一个Python模块,ArgumentParser 对象包含将命令行解析成 Python 数据类型所需的全部信息。
     parser = argparse.ArgumentParser()
     # 增加参数
-    parser.add_argument('--weights-file', type=str, required=True)
-    parser.add_argument('--image-file', type=str, required=True)
-    parser.add_argument('--scale', type=int, default=3)
+    parser.add_argument('--weights-file', default="srcnn_x4.pth", type=str, required=True)
+    parser.add_argument('--image-file', default="data/butterfly_GT.bmp", type=str, required=True)
+    parser.add_argument('--scale', type=int, default=4)
     # ArgumentParser 通过 parse_args() 方法解析参数。
     # 至此，args拥有了上述信息参数。
     args = parser.parse_args()
