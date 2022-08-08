@@ -18,7 +18,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # 增加参数
     parser.add_argument('--weights-file', default="srcnn_x4.pth", type=str, required=True)
-    parser.add_argument('--image-file', default="data/butterfly_GT.bmp", type=str, required=True)
+    parser.add_argument('--image-file', default="../test_image/any_image.png", type=str, required=True)
+    parser.add_argument('--outpath', default="../test_result/any_model/any_image_result.png, type=str, required=True)
     parser.add_argument('--scale', type=int, default=4)
     # ArgumentParser 通过 parse_args() 方法解析参数。
     # 至此，args拥有了上述信息参数。
@@ -81,4 +82,4 @@ if __name__ == '__main__':
     output = np.array([preds, ycbcr[..., 1], ycbcr[..., 2]]).transpose([1, 2, 0])
     output = np.clip(convert_ycbcr_to_rgb(output), 0.0, 255.0).astype(np.uint8)
     output = pil_image.fromarray(output)
-    output.save(args.image_file.replace('.', '_srcnn_x{}.'.format(args.scale)))
+    output.save(args.outpath.replace('.', '_srcnn_x{}.'.format(args.scale)))
